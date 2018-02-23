@@ -1,0 +1,10 @@
+/**app.wxss**/
+@import "./lib/styles/font/font.wxss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 16rpx;
+} 

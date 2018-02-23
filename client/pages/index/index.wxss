@@ -1,0 +1,101 @@
+.input-c{
+  width: 100%;
+}
+
+.input{
+  height: 3rem;
+  padding: 0 1rem;
+  border: 1rpx solid #DDD;
+  border-radius: 10rpx;
+}
+
+.button{
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.result{
+  margin-top: 1rem;
+  width: 90%;
+}
+
+.result view{
+  padding: 2pt 0;
+}
+
+.result .word{
+  font-weight: bold;
+}
+.result > .word{
+  font-size: 17pt;
+}
+
+.pronunciation{
+  height:30pt;
+}
+
+.pronunciation .word{
+  margin-right: 0.2rem;
+}
+.pronunciation .us{
+  margin-left: 1rem;
+}
+
+.pronunciation .iconfont{
+  margin:0 2pt;
+  color: #4395FF;
+  width: 18pt;
+  height: 18pt;
+  font-size: 18pt;
+  position: relative;
+  top: 13pt;
+}
+
+.pronunciation .iconfont:before{
+  position: absolute;
+}
+
+/* http://fanyi.baidu.com/?aldtype=16047#en/zh/hello gif来源 */
+.pronunciation .iconfont.icon-video_light-active{
+  background-image: url('//fanyi.bdstatic.com/static/translation/img/translate/simplemeans/repeat-runningn2x_834de6b.gif');
+  background-size: cover;
+  height: 18pt;
+  width: 18pt;
+  position:relative;
+  top:4pt;
+}
+
+.pronunciation .iconfont.icon-notification-active{
+  background-image: url('//fanyi.bdstatic.com/static/translation/img/translate/output/sound2x_d6f553d.gif');
+  background-size: cover;
+  height: 18pt;
+  width: 18pt;
+  position:relative;
+  top:3pt;
+  left: 1pt;
+}
+
+.examples text text{
+  font-weight: bold;
+}
+
+.recent-words{
+  width:95%;
+  position:absolute;
+  bottom:0;
+}
+
+.recent-words text{
+  margin-right:1rem;
+  margin-bottom:0.5rem;
+  background:#DDD;
+  color:#FFF;
+  padding:0.1rem 0.5rem;
+  border-radius:0.5rem;
+  display:inline-block;
+}
+
+.login-btn{
+  position: absolute;
+  bottom: 1rem;
+}

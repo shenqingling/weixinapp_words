@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 搜索框 -->
+  <view class="input-c">
+    <input class="input" placeholder="请输入单词" bindinput="bindWordInput" value="{{search}}" auto-focus/>
+    <button type="primary" bindtap="wordSearch" class="button">查询</button>
+  </view>
+  <!-- 搜索结果 -->
+  <view class="result">
+    <!-- 搜索的单词 -->
+    <text class="word">{{word}}</text>
+    <!-- 音标 -->
+    <view class="pronunciation" wx:if="{{description.id > -1}}">
+      <text class="word">英</text>
+      <text>[{{description.pronunciations.uk}}]</text>
+      <audio class="iconfont {{ uk ? 'icon-notification-active' : 'icon-notification'}}" bindtap='audioUkPlay'></audio>
+      <audio class="iconfont {{ ukLoop ? 'icon-video_light-active' : 'icon-video_light'}}" bindtap='audioUkPlay' data-loop="true"></audio>
+      <text class="word us">美</text>
+      <text>[{{description.pronunciations.us}}]</text> 
+      <audio class="iconfont {{ us ? 'icon-notification-active' : 'icon-notification'}}" bindtap='audioUsPlay'></audio>
+      <audio loop class="iconfont {{ usLoop ? 'icon-video_light-active' : 'icon-video_light'}}" bindtap='audioUsPlay' data-loop="true"></audio>
+    </view>
+    <!-- 解释 -->
+    <view>
+      <text>{{description.definition}}</text>
+    </view>
+    <!-- 例句 -->
+    <view class="examples">
+      <!-- <rich-text wx:key="{{item.id}}" wx:for="{{examples}}" nodes="{{index + 1}}. {{item.annotation}}{{item.translation}}"></rich-text> -->
+      <view wx:key="{{item.id}}" wx:for="{{examples}}">
+        <text>{{index + 1}}. {{item.first}} <text>{{item.mid}}</text> {{item.last}} {{item.translation}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 最近搜索的单词 -->
+  <view class="recent-words">
+    <view wx:if="{{words.length}}">最近搜索的单词</view>
+    <text wx:key="{{item}}" wx:for="{{words}}" data-search="{{item}}" bindtap="wordSearch">{{item}}</text>
+  </view>
+
+  <!-- <text class="login-btn" bindtap="login">微信登陆</text> -->
+</view>
